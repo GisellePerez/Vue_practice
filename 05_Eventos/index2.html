@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <ul>
+            <li v-for="tarea in tareas">
+                {{ tarea }}
+            </li>
+        </ul>
+
+        <!-- <input type="text" placeholder="Agrega una tarea" v-model="nuevaTarea"> -->
+        <!-- <input type="button" value="Enviar tarea" onclick="agregarTarea()"> -->
+        <!-- <input type="button" value="Enviar tarea" v-on:click="agregarTarea()"> -->
+
+        <form v-on:submit.prevent="agregarTarea()">
+            <input type="text" placeholder="Agrega una tarea" v-model="nuevaTarea">
+            <input type="submit" value="Enviar tarea">
+        </form>
+
+    </main>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

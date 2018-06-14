@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03 Renderizado de listas</title>
+</head>
+<body>
+
+    <main>
+        <!-- <h2>{{ laborales }}</h2> hay que recorrer el array o matriz para mostrar bien-->
+        <ul>
+            <li v-for="dia in laborales">{{ dia }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="tarea in tareas">{{ tarea.nombre }} - 
+                <small>Prioridad: {{ tarea.prioridad }}</small>
+            </li>
+        </ul>
+
+        <!-- Recorremos un array de objetos -->
+        <ul>
+            <li v-for="(tarea, index) in tareas">
+                {{ index+1 }} - {{ tarea.nombre }} 
+                <small> (Prioridad: {{ tarea.prioridad }})</small>
+            </li>
+        </ul>
+
+        <!-- Recorremos un objeto -->
+        <ul>
+            <li v-for="(value, key, index) in persona">
+                {{ index }} - {{ key }}:  {{ value }} 
+            </li>
+        </ul>
+
+        <pre>{{ $data }}</pre>
+    </main>    
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

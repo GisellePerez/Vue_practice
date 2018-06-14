@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02 VUE Directivas</title>
+</head>
+<body>
+
+    <main>
+        <!-- V-SHOW le aplica un display none. Sigue estando en el DOM pero no lo veo-->
+        <!-- V-IF elimina el elemento del DOM -->
+
+        <h1 v-if="conectado">Estoy conectado</h1> <!-- v-show === true es igual -->
+        <h2 v-if="edad < 18">No puedes entrar</h2>
+        <h2 v-else-if="edad > 200">Eres inmortal</h2>
+        <h2 v-else>Puedes entrar</h2>
+
+        <template v-if="conectado">
+            <h3>Esto es un h3</h3>
+            <ul>
+                <li>
+                    <a href="#">Mis datos</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Galería</a>
+                </li>
+            </ul>
+        </template>
+        <h4 v-else>No estás conectado :(</h4>
+
+        <pre>{{ $data }}</pre>
+
+    </main>            
+        
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
