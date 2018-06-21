@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09 Data binding, attributes and classes</title>  
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main>
+        <h1 v-text="title"></h1>
+        <h2>Completed tasks: {{ completedTasks.length }}</h2>
+        <ul>
+            <li :class="{completed: task.completed}"
+                @click="completeTask(task)" 
+                v-for="task in tasks">
+                {{ task.name }}
+            </li>
+        </ul>
+        <pre> {{ $data }} </pre>
+    </main>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

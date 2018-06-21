@@ -1,0 +1,16 @@
+.fade-enter{
+    /*enter solo dura un frame. es perfecto para hablidades de base, de inicio*/
+    opacity:0;
+}
+.fade-enter-active{
+    /*establezco que eso que pasa en un frame dure un segundo*/
+    transition: opacity 1s;
+}
+.fade-leave-to{
+    /*el último estado de la transition*/
+    opacity:0;
+}
+.fade-leave-active{
+    /*animacion hacia la salida.No quiero que vaya a 0 de una en un solo frame*/
+    transition: opacity 1s;
+}
