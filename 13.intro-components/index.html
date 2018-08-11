@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13 Components Intro</title>  
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main>
+        <!--<ul>
+             <li v-for="task in tasksAjax">
+                {{task.title}}
+            </li> 
+            <li v-for="task in tasksAjax" v-text="task.title"></li>    
+        </ul>-->
+
+        <my-tasks v-bind:tasks="tasksAjax"></my-tasks> <!--need to name the info-->
+        
+        <pre> {{ $data }} </pre>
+    </main>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

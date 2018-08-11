@@ -1,3 +1,6 @@
+//if i want to use vue-resource and axios
+//Vue.prototype.$http = axios;
+
 new Vue ({
     el: 'main',
     mounted() {
@@ -15,7 +18,7 @@ new Vue ({
                 .then(response => {
                 //body data
                 console.log(response.body.results);
-                this.people = response.body.results;
+                this.people = response.body.results; //data instead of body if using prototype.$http = axios
             });
         }
     }
