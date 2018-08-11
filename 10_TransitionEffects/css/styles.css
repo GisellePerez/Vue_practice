@@ -1,3 +1,4 @@
+/* Transition*/
 .fade-enter{
     /*enter solo dura un frame. es perfecto para hablidades de base, de inicio*/
     opacity:0;
@@ -13,4 +14,36 @@
 .fade-leave-active{
     /*animacion hacia la salida.No quiero que vaya a 0 de una en un solo frame*/
     transition: opacity 1s;
+}
+
+/* Animation */
+.bounce-enter-active {
+    animation: bounce-in .5s;
+}
+.bounce-leave-active{
+    animation: bounce-out .5s;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce-out {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(0);
+    }
 }

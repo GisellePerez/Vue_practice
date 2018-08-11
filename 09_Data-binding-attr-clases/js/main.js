@@ -11,9 +11,9 @@ const vm = new Vue ({
     },
     methods: { //an object
         completeTask(task){
-            //to change the completed attr value. REcieves a task as parameter
+            //to change the completed attr value for the opposite value (true/false) when i click. REcieves a task as parameter
             //console.log(task);
-            task.completed = !task.completed;
+            task.completed = !task.completed; 
         }
     },
     computed:{

@@ -5,15 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>10 Transition Effects</title>  
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <main>
         <button @click="show = !show">Mostrar/Ocultar</button>
+
+        <!-- Transition -->
         <transition name="fade">  
             <h1 v-if="show" v-text="messages.transition"> </h1>
         </transition>
+
+        <!-- Animation -->
+        <transition name="bounce">  
+            <h1 v-if="show" v-text="messages.animation"> </h1>
+        </transition>
+
+        <!-- Animate.css -->
+        <transition 
+            name="whatever-name-you-want"
+            enter-active-class="animated fadeOutRight"
+            leave-active-class="animated fadeOutLeft">  <!-- animate.css animation name -->
+            <h1 v-if="show" v-text="messages.customAnimation"> </h1>
+        </transition>
+
+        <!-- Transition among different elements -->
+        <transition name="fade" mode="out-in"> <!--mode to prevent transitions to ocurr at the same time-->
+            <h1 v-if="show" v-text="messages.betweenElements" key="fade"> </h1>
+            <h1 v-else key="hide">Sorry, no items found</h1>
+        </transition>
+
         <pre> {{ $data }} </pre>
     </main>
 
