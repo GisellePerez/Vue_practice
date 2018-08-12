@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14 Component templates</title>  
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main> 
+        <!-- INLINE TEMPLATING (whithin the instance) -->
+        <choose-winner v-bind:list="people" inline-template>
+            <div> 
+                <h1 v-if="winner">The winner is {{ winner }}</h1>
+                <template v-else>
+                    <h1>Contestants</h1>
+                    <ul>
+                        <li v-for="person in list">{{ person }}</li>
+                    </ul>
+                </template>
+                <button @click="chooseWinner">Choose winner</button>
+            </div>
+        </choose-winner>
+
+        <pre> {{ $data }} </pre>
+    </main>
+
+    <!-- USING TEMPLATE TAG
+    <template id="choose-winner-template">
+        <div> 
+            <h1 v-if="winner">The winner is {{ winner }}</h1>
+            <template v-else>
+                <h1>Contestants</h1>
+                <ul>
+                    <li v-for="person in list">{{ person }}</li>
+                </ul>
+            </template>
+            <button @click="chooseWinner">Choose winner</button>
+        </div>
+    </template>
+    -->
+
+    <!-- USING SCRIPT
+    <script type="text/template" id="choose-winner-template">
+        <div> 
+            <h1 v-if="winner">The winner is {{ winner }}</h1>
+            <template v-else>
+                <h1>Contestants</h1>
+                <ul>
+                    <li v-for="person in list">{{ person }}</li>
+                </ul>
+            </template>
+            <button @click="chooseWinner">Choose winner</button>
+        </div>
+    </script>
+    -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13 Components Intro</title>  
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main>
+        <!-- <ul> -->
+        <!--    <li v-for="task in tasksAjax" v-text="task.title"></li> -->
+        <!-- </ul> -->
+        
+    <!--    <h2>Ajax Tasks</h2>
+        <todo-list v-bind:tasks="tasksAjax"></todo-list>  bind tasks to the rendering part 
+    -->     
+    <!--    
+        <h2>Local Tasks</h2>
+        <todo-list v-bind:tasks="localTasks"></todo-list> 
+    -->
+        
+        <h2>To do list</h2>
+        <todo-list></todo-list>
+
+        <pre> {{ $data }} </pre>
+    </main>
+
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>
