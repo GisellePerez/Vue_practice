@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>21 Component inside component</title>    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main>
+        <button @click="selected = 'todo-list'">Tareas</button>
+        <button @click="selected = 'contact-info'">Contacto</button>
+        <button @click="selected = 'bio'">Bio</button>
+
+        <component :is="selected"></component>
+
+        <!-- With this we can se all three components at the same time
+        <todo-list></todo-list>
+        <contact-info></contact-info>
+        <bio></bio>
+        -->
+
+        <pre> {{ $data }} </pre>
+    </main>
+
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>
