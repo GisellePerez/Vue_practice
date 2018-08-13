@@ -1,0 +1,58 @@
+/* Blocks */
+.alert-box {
+    width: 300px;
+    border-radius: 15px;
+    background-color: lightgray;
+    border: 1px solid white;
+    box-shadow: 1px 1px 2px gray;
+    font-family: sans-serif;
+    position: absolute;
+}
+
+/* Elements */
+.alert__header {
+    border-bottom: 1px solid white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.alert__content {
+    font-size: 14px;
+    padding: 20px;
+}
+.alert__footer {
+    border-top: 1px solid white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* Modifiers */
+/* Styles */
+.a--error {
+    background-color: indianred;
+}
+.a--warning {
+    background-color: lightgoldenrodyellow;
+}
+.a--success {
+    background-color: lightgreen;
+}
+
+/* Position */
+.a--up-left {
+    left: 0;
+    top: 0;
+}
+.a--down-left {
+    left: 0;
+    bottom: 0;
+}
+.a--up-right {
+    right: 0;
+    top: 0;
+}
+.a--down-right{
+    right: 0;
+    bottom: 0;
+}

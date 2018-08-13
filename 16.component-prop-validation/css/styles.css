@@ -1,0 +1,13 @@
+blockquote {
+    border-bottom: 1px solid darkgrey;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-bottom: 0.8em;
+}
+figure {
+    margin: 0;padding: 0;
+}
+img{
+    border-radius: 50%;
+}

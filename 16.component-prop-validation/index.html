@@ -5,18 +5,45 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>15 Component properties</title>  
+    <title>16 Prop validation</title>  
     
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <main> 
-        <author :name="author" :age="99"></author> <!-- use bind so JS evaluates the right type of data-->
+
+        <candidate v-for="candidate in candidates"
+                    :name="candidate.name.first"
+                    :email="candidate.email"
+                    :image="candidate.picture.large"
+                    :location="candidate.location">
+        </candidate>
+    
         <pre> {{ $data }} </pre>
     </main>
+
+    <template id="candidate-template">
+        <blockquote>
+            <figure>
+
+                <img :src="image" :alt="name">
+            </figure>
+            <div class="info">
+                <h1> {{ name }} </h1>
+                <h2> {{ email }} </h2>
+                <!-- <p> {{ location.street }} <span> {{ location.city }} </span> <span> {{ location.state }} </span></p> -->
+                <ul>
+                    <li v-for="(value,key,index) in location">
+                        {{ value }} <!-- here i get all the items in the object -->
+                    </li>
+                </ul>
+            </div>
+        </blockquote>
+    </template>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>    
 </body>
 </html>

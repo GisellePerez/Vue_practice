@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>17 Slots and named slots</title>    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main>
+        <alert type="a--warning" posi="a--up-right">
+            <!-- <p>This is the new content in the alert :D</p> creates a new p element -->
+            <template slot="header">Todo OK</template>
+            <template>This is the new content in the alert :D</template>
+            <template slot="footer">New footer text</template>
+            <!-- template replaces the text but doesn't create a new element in the dom -->
+        </alert> 
+
+        <pre> {{ $data }} </pre>
+    </main>
+
+    <template id="alert-template">
+        <section class="alert-box" :class="['type', 'posi']">
+            <header class="alert__header">
+                <slot name="header">
+                    Hello
+                </slot>
+            </header>
+            <div class="alert__content">
+                <slot>
+                    Lorem ipsum dolor sit amet, consectetur elit. Vivamus dictum dui vitae.
+                </slot>
+            </div>
+            <footer class="alert__footer">
+                <slot name="footer">
+                    This is the footer
+                </slot>
+            </footer>
+        </section>
+    </template>
+
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>
