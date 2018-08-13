@@ -5,15 +5,40 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>17 Slots and named slots</title>    
+    <title>18 Scoped slots</title>    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <main>
+        <my-tasks :list="tasks">
+            <template slot="task" scope="data"> <!-- scope is a temporary variable -->
+                <li><h2> {{ data.title }} </h2></li>
+            </template>
+        </my-tasks>
+     
+        <my-tasks :list="tasks">
+            <template slot="task" scope="data"> 
+                <li> {{ data.title }} </li>
+            </template>
+        </my-tasks>
+
+        <my-tasks :list="tasks">
+            <template slot="task" scope="data"> 
+                <li> 😺 {{ data.title }} </li>
+            </template>
+        </my-tasks>
+
         <pre> {{ $data }} </pre>
     </main>
-    
+
+    <template id="my-tasks-template">
+        <ul>
+            <!-- <li v-for="task in list"> {{ task.title }} </li> -->
+            <slot name="task" v-for="task in list" :title="task.title"></slot>
+        </ul>
+    </template>
+
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="js/main.js"></script>    
 </body>
