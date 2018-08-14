@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>24 Component exercise</title>    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main>
+        <users>
+            <h1>Users list</h1>
+        </users>
+        <pre> {{ $data }} </pre>
+    </main>
+
+    <template id="users-template">
+        <div>
+            <section class="header">
+                <slot>
+                </slot>
+                <input type="search" placeholder="Filter users" v-model="search">
+            </section>
+            <section class="users-section">
+                <!-- <p v-for="user in users">{{ user }}</p> -->
+                <!-- <user :data="user" v-for="user in users"></user> calling the array -->
+                <user :data="user" v-for="user in filterUsers"></user> <!-- calling the computed propertuy -->
+            </section>
+        </div>
+    </template>
+
+    <template id="user-template">
+        <div class="user">
+            <img :src="data.picture" :alt="data.name">
+            <section>
+                <h2> {{ data.name }} </h2>
+                <p> {{ data.email }} </p>
+            </section>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

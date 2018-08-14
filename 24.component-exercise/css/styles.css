@@ -1,0 +1,49 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', cursive;
+}
+main {
+    width: 84%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid lightgray;
+    padding-bottom:2em;
+}
+.header input{
+    width:80%;
+    padding: 0.5em;
+}
+h1{
+    font-size: 36px;
+    color: lightseagreen;   
+}
+.users-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:2em;
+}
+.user {
+    display: flex;
+    align-items: center;
+    width: 29%;
+    padding: 0.7em ;
+    margin: 1.2em 0;
+    box-shadow: lightgrey 1px 1px 2px;
+    transition: all .5s ease-in-out;
+}
+.user:hover{
+    transform: scale(1.1);
+}
+.user img {
+    margin-right: 0.8em;
+}
+.user h2 {
+    color: lightseagreen;
+}

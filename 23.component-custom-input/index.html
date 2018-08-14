@@ -5,24 +5,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>22 Dynamic components</title>    
+    <title>23 Custom input components</title>    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <main>
-        <button @click="selected = 'todo-list'">Tareas</button>
-        <button @click="selected = 'contact-info'">Contacto</button>
-        <button @click="selected = 'bio'">Bio</button>
-
-        <component :is="selected"></component>
-
-        <!-- With this we can se all three components at the same time
-        <todo-list></todo-list>
-        <contact-info></contact-info>
-        <bio></bio>
+        <!-- <input type="text" v-model="password"> -->
+        <!--
+        <input type="text" :value="password" @input="password = $event.target.value">
+            ==
+        <pass v-model="password"></pass> 
         -->
-
+        <pass v-model="password"></pass> 
         <pre> {{ $data }} </pre>
     </main>
 
